@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}Order Details{% endblock %}
+{% block content %}
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="{% url 'index' %}">Home</a>
+                    <a class="breadcrumb-item text-dark" href="{% url 'orders' %}">Orders</a>
+                    <span class="breadcrumb-item active">Order Details</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Orders</span></h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-3 mb-5">
+                {% include "account-side-bar.html" %}
+            </div>
+            <div class="col-lg-8 mb-5">
+                <div class="card">
+                    <h2 class="card-header">
+                       <a href="{% url 'orders' %}">&NestedLessLess;</a> Order Details
+                    </h2>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>
+                                    Order &numero; {{order.id}}
+                                </h5>
+                                <p>
+                                    {{order.items.count}} Item{{order.items.count|pluralize}} <br>
+                                    Placed on {{order.created|date:"d-m-y"}} <br>
+                                    Total: ₦{{order.get_total_cost}}
+                                </p>
+                            </div>
+                            <div class="col-3">
+                                <a href="{% url 'order-pdf' order.id %}" target="_blank" class=" float-right btn btn-primary">View Order Invoice</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>Items In Your Order</h4>
+                        <div class="row">
+                            {% for item in order.items.all %}
+                            <div class="col-md-12 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                      <div class="row">
+                                        <div class="col-3">
+                                            <img src="{{item.product.image.url}}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="col-6">
+                                            <h5>{{item.product.name}}</h5>
+                                            <span>Quantity: {{item.quantity}}</span>
+                                            <h6 class="mt-1">Price: ₦{{item.get_cost}}</h6>
+                                        </div>
+                                        <div class="col-3">
+                                            <a href="#" class="btn btn-primary">Track My Item</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Payment Information
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <h5>Payment Method</h5>
+                                            <p>
+                                                {{transaction_type}}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h5>Payment Details</h5>
+                                            <p>
+                                                Item Total: ₦{{order.get_total_cost}} <br>
+                                                Delivery fee: free <br>
+                                                Total: ₦{{order.get_total_cost}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Delivery Information
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <h5>Delivery Method</h5>
+                                            <p>
+                                                Door Delivery
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h5>Shipping Address</h5>
+                                            <p>
+                                               Country: {{order.country}} <br>
+                                               State: {{order.state}} <br> 
+                                               Address: {{order.address}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+{% endblock %}

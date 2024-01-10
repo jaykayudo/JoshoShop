@@ -1,0 +1,4 @@
+Requirement already satisfied: pyOpenSSL in c:\users\joshudo\documents\my projects\web apps\testdjango\lib\site-packages (22.0.0)
+Requirement already satisfied: cryptography>=35.0 in c:\users\joshudo\documents\my projects\web apps\testdjango\lib\site-packages (from pyOpenSSL) (39.0.2)
+Requirement already satisfied: cffi>=1.12 in c:\users\joshudo\documents\my projects\web apps\testdjango\lib\site-packages (from cryptography>=35.0->pyOpenSSL) (1.15.1)
+Requirement already satisfied: pycparser in c:\users\joshudo\documents\my projects\web apps\testdjango\lib\site-packages (from cffi>=1.12->cryptography>=35.0->pyOpenSSL) (2.21)

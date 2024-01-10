@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Generator</title>
+</head>
+<body>
+    <div>
+        <h1>Placeholder Generator</h1>
+        <p>
+            to test it out do <br>
+            &lt; img src="{{example}}" &gt;
+        </p>
+        <div>
+            <img src="{% url 'placeholder' 400 300 %}" alt="">
+            <img src="{% url 'placeholder' 200 300 %}" alt="">
+            <img src="{% url 'placeholder' 500 500 %}" alt="">
+        </div>
+    </div>
+</body>
+</html>

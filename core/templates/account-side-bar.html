@@ -1,0 +1,26 @@
+<div class="contact-form bg-light">
+        <div class="card">
+            <ul class="list-group list-group-flush" style="color: black!important; font-size: 16px!important;">
+              <li class="list-group-item bg-secondary">
+               <a href="{% url 'account' %}" style="color: black!important; font-size: 16px!important; display: inline-block; width: 100%; text-decoration: none;">
+                <i class="fas fa-user"></i>&nbsp;&nbsp;Profile</a>
+                </li>
+              <li class="list-group-item">
+                <a href="{% url 'orders' %}" style="color: black!important; font-size: 16px!important; display: inline-block; width: 100%; text-decoration: none;">
+                    <i class="fas fa-box"></i>&nbsp;&nbsp;Orders</a>
+                </li>
+              <li class="list-group-item">
+                <a href="{% url 'inbox' %}" style="color: black!important; font-size: 16px!important; display: inline-block; width: 100%; text-decoration: none;">
+                    <i class="fas fa-envelope"></i>&nbsp;&nbsp;Inbox</a>
+              </li>
+              <li class="list-group-item">
+                <a href="{% url 'favourite' %}" style="color: black!important; font-size: 16px!important; display: inline-block; width: 100%; text-decoration: none;">
+                    <i class="fas fa-heart"></i>&nbsp;&nbsp;Saved Items</a>
+              </li>
+              <li class="list-group-item">
+                <a href="{% url 'logout' %}" style="color: black!important; font-size: 16px!important; display: inline-block; width: 100%; text-decoration: none;">
+                    <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a>
+              </li>
+            </ul>
+          </div>
+</div>
