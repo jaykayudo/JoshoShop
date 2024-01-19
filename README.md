@@ -73,10 +73,10 @@ To run this project, you will need to add the following environment variables to
 `PAYSTACK_PUBLIC_KEY`
 ## Screenshots
 
-![App Screenshot](https://asset.cloudinary.com/ds81lsf2c/89af465127243a6b1090cf27c8911f07)
+![App Screenshot](https://res.cloudinary.com/ds81lsf2c/image/upload/v1705696668/Capture1_xmygzd.jpg)
 
-![App Screenshot](https://asset.cloudinary.com/ds81lsf2c/0aaf5904ffb21eeb9157ac8e84824605)
+![App Screenshot](https://res.cloudinary.com/ds81lsf2c/image/upload/v1705696666/Capture2_hl3wca.jpg)
 
-![App Screenshot](https://asset.cloudinary.com/ds81lsf2c/cbd33a0b8cbb924bc87f0c1d9b9bc57b)
+![App Screenshot](https://res.cloudinary.com/ds81lsf2c/image/upload/v1705696666/Capture3_hajer8.jpg)
 
-![App Screenshot](https://asset.cloudinary.com/ds81lsf2c/5a28316d48cef313351f65a6fd19a851)
+![App Screenshot](https://res.cloudinary.com/ds81lsf2c/image/upload/v1705696663/Capture_z01tzw.jpg)
