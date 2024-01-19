@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import core
+import os
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
+
+load_dotenv (Path(__file__).resolve().parent.parent / '.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -146,7 +149,7 @@ AUTHENTICATION_BACKENDS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'GMT+1'
 
 USE_I18N = True
 
@@ -177,8 +180,8 @@ IMPORT_IMAGES_DIR = BASE_DIR / 'product_images'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '380808054823-dplfad99ei3jdib5onneevhqfdm9ft06.apps.googleusercontent.com' # Google Client ID 
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Client Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY') # Google Client ID 
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET') # Google Client Secret
 
 # CRISPY_TEMPLATE_PACK = 'uni_form' # for crispy forms
 
@@ -207,8 +210,8 @@ SOCIAL_AUTH_PIPELINE = (
 
 CART_SESSION_ID = "cart" # custom added
 
-PAYSTACK_SECRET_KEY= "sk_test_0433acf3d2150dfdb92abe3674f7645a3b3d3e9f"
-PAYSTACK_PUBLIC_KEY = "pk_test_4633bc9f5efb7428e6b83063d3d92c0a590ddeb9"
+PAYSTACK_SECRET_KEY= os.getenv('PAYSTACK_SECRET_KEY')
+PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
